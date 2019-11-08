@@ -144,6 +144,23 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
+\begin{verbatim}
+## 
+## Attaching package: 'igraph'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     decompose, spectrum
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:base':
+## 
+##     union
+\end{verbatim}
+
 \chapter{Prerequisites}\label{prerequisites}
 
 This is a \emph{sample} book written in \textbf{Markdown}. You can use
@@ -246,15 +263,26 @@ You can write citations, too. For example, we are using the
 \textbf{bookdown} package \citep{R-bookdown} in this sample book, which
 was built on top of R Markdown and \textbf{knitr} \citep{xie2015}.
 
-\section{TikZ picture}\label{tikz-picture}
+\section{Graph}\label{graph}
 
-\begin{itemize}
-\tightlist
-\item
-  Here is a TikZ picutre
-\end{itemize}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\KeywordTok{sample}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\DecValTok{1}\NormalTok{, }\DecValTok{100}\NormalTok{, }\DataTypeTok{replace=}\OtherTok{TRUE}\NormalTok{, }\DataTypeTok{prob=}\KeywordTok{c}\NormalTok{(}\FloatTok{0.8}\NormalTok{,}\FloatTok{0.2}\NormalTok{)), }\DataTypeTok{nc=}\DecValTok{10}\NormalTok{)}
+\NormalTok{network <-}\StringTok{ }\KeywordTok{graph_from_adjacency_matrix}\NormalTok{(data , }\DataTypeTok{mode=}\StringTok{'undirected'}\NormalTok{, }\DataTypeTok{diag=}\NormalTok{F )}
+\CommentTok{# Default network}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{))}
+\KeywordTok{plot}\NormalTok{(network)}
+\end{Highlighting}
+\end{Shaded}
 
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-3-1.pdf}
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{bookdown-demo_files/figure-latex/graph-ex-1} 
+
+}
+
+\caption{network}\label{fig:graph-ex}
+\end{figure}
 
 \chapter{Literature}\label{literature}
 
