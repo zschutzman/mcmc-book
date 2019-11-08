@@ -12,7 +12,9 @@ github-repo: rstudio/bookdown-demo
 description: "A very work-in-progress thing.  "
 ---
 
-
+```{r,echo=FALSE}
+library("igraph")
+```
 
 # Prerequisites
 
@@ -33,6 +35,6 @@ To compile this example to PDF, you need XeLaTeX. You are recommended to install
 ```{r include=FALSE}
 # automatically create a bib database for R packages
 knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+  .packages(), 'bookdown', 'knitr', 'rmarkdown', 'igraph'
 ), 'packages.bib')
 ```
